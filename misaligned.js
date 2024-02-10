@@ -8,10 +8,10 @@ function print_color_map() {
             color_map += `${i * 5 + j} | ${majorColors[i]} | ${minorColors[j]}\n`;
         }
     }
-    return color_map; // Returning only the string representation
+    return { colorMap, majorColors, minorColors }; // Returning color map ,majorColors and minorColors
 }
 
-module.exports = { print_color_map, majorColorsLength: majorColors.length, minorColorsLength: minorColors.length };
+module.exports = { print_color_map };
 
 
 
