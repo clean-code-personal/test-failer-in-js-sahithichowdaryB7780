@@ -10,4 +10,8 @@ import('chai').then(chai => {
     expect(size(38)).to.equal('S');  
 
     console.log('All is well (maybe!)');
+}).catch(error => {
+    console.error('An error occurred:', error);
+    process.exit(1); // Exit with a non-zero exit code to indicate failure
 });
+
