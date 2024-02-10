@@ -1,5 +1,5 @@
 const { print_color_map, majorColors, minorColors } = require('./misaligned.js');
-const { size } = require("./misaligned.js");
+const { expect } = require("chai");
 
 
     // The size of misaligned table is compared with actual table.When table is misaligned,it fails at this test case
