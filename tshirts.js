@@ -1,5 +1,6 @@
 function size(cms) {
-    if (cms < 38) {
+    //The fault has been fixed at the line  as we dont't miss the value 38
+    if (cms <= 38) {
         return 'S';
     } else if (cms > 38 && cms < 42) {
         return 'M';
