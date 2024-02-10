@@ -1,31 +1,28 @@
 let transmissionFailureCount = 0;
 
-function networkTransmitStub(celcius) {
-    console.log(`Temperature to transmit: ${celcius} celcius`);
+function networkTransmitStub(celsius) {
+    console.log(`Temperature to transmit: ${celsius} Celsius`);
+    // Generate a random number between 0 and 1
+    const randomNumber = Math.random();
+    // Map the random number to either 200 or 500
+    // If randomNumber is less than 0.5, return 200, otherwise return 500
+    return randomNumber < 0.5 ? 200 : 500;
 
     // The intention here is to transmit the temperature over a network.
     // However, this is a stub, so we just print the message above
     // and give back a return code.
 
-    // Return 200 for ok
-    // Return 500 for not-ok
-    // This stub always succeeds and returns 200
-    return 200;
 }
 
-function transmitInCelcius(farenheit) {
-    const celcius = (farenheit - 32) * 5 / 9;
-    const returnCode = networkTransmitStub(celcius);
-    if (returnCode != 200) {
+function transmitInCelcius(fahrenheit) {
+    const celsius = (fahrenheit - 32) * 5 / 9;
+    const returnCode = networkTransmitStub(celsius);
+    if (returnCode !== 200) {
         // non-ok response indicates failure while transmitting over the network
-        // let us keep a count of failures to report
-        // However, this code doesn't increment failures - that's a bug!
-        // Add a test below to catch this bug. Alter the stub above, if needed.
+        // record of failure count
         transmissionFailureCount += 0;
     }
 }
 
-transmitInCelcius(400.5);
-transmitInCelcius(303.6);
-console.log(`Transmission failed ${transmissionFailureCount} times.`);
-console.log('All is well (maybe!)');
+module.exports = { transmitInCelcius, transmissionFailureCount };
+
