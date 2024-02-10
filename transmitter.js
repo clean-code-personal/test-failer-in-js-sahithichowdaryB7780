@@ -5,8 +5,8 @@ function transmitInCelcius(fahrenheit,networkTransmit=networkTransmitStub) {
     const returnCode = networkTransmit(celsius);
     if (returnCode !== 200) {
         // non-ok response indicates failure while transmitting over the network
-        // record of failure count
-        transmissionFailureCount += 0;
+        // The bug has been fixed, so it increments every time the transmissionFailureCount occurs
+        transmissionFailureCount += 1;
     }
 }
 
