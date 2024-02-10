@@ -18,6 +18,14 @@ function testColumnAlignment() {
                 expect(column.every(cell => cell.length === columnWidth)).to.be.true;
             });
         } 
+//The misalignment is identified by the column width occupied,when output is not aligned it has different column width at each row
+ function testColorMapLength() {
+    const colorMapLines = colorMap.split("\n").filter(Boolean);
+    const maxSizeOfColorPair = (majorColors.length * minorColors.length);
+    console.log(colorMapLines.length);
+    console.log(maxSizeOfColorPair);
+    expect(colorMapLines.length).equals(maxSizeOfColorPair);
+}
    
 
     // Run the tests
