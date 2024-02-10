@@ -8,7 +8,7 @@ function print_color_map() {
             color_map += `${i * 5 + j} | ${majorColors[i]} | ${minorColors[j]}\n`;
         }
     }
-    return { colorMap, majorColors, minorColors }; // Returning color map ,majorColors and minorColors
+    return { color_map, majorColors, minorColors }; // Returning color map ,majorColors and minorColors
 }
 
 module.exports = { print_color_map };
