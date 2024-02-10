@@ -21,9 +21,7 @@ function testColumnAlignment() {
     // The size of misaligned table is compared with actual table.When table is misaligned,it fails at this test case
  function testColorMapLength() {
     const colorMapLines = colorMap.split("\n").filter(Boolean);
-    const majorColorArray = [...majorColors];
-    const minorColorArray = [...minorColors];
-    const maxSizeOfColorPair = (majorColorArray.length * minorColorArray.length);
+    const maxSizeOfColorPair = (majorColors.length * minorColors.length);
     expect(colorMapLines.length).equals(maxSizeOfColorPair);
 }
     // Run the tests
