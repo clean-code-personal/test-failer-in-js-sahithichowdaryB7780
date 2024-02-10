@@ -25,8 +25,8 @@ function networkTransmitStub(celsius) {
 
     // Test if transmission failure count is at least 1
     //fails the test,as the code is buggy
-        expect(transmissionFailureCount).to.be.at.least(1);
-        console.log('Test case passed: At least one transmission failure detected.');
+    expect(transmissionFailureCount).to.be.at.least(1);
+    console.log('Test case passed: At least one transmission failure detected.');
    
 
     console.log('All is well (maybe!)');
