@@ -9,6 +9,8 @@ console.log(colorMap);
  function testColorMapLength() {
     const colorMapLines = colorMap.split("\n").filter(Boolean);
     const maxSizeOfColorPair = (majorColors.length * minorColors.length);
+    console.log(colorMapLines.length);
+    console.log(maxSizeOfColorPair);
     expect(colorMapLines.length).equals(maxSizeOfColorPair);
 }
 function testColumnAlignment() {
