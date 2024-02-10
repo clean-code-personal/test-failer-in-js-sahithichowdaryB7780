@@ -6,6 +6,11 @@ const majorColors = returned_contents_print_color_map.majorColors || returned_co
 const minorColors = returned_contents_print_color_map.minorColors || returned_contents_print_color_map[2]; // Handle direct return or return via object
 console.log(colorMap);
  //The misalignment is identified by the column width occupied,when output is not aligned it has different column width at each row
+ function testColorMapLength() {
+    const colorMapLines = colorMap.split("\n").filter(Boolean);
+    const maxSizeOfColorPair = (majorColors.length * minorColors.length);
+    expect(colorMapLines.length).equals(maxSizeOfColorPair);
+}
 function testColumnAlignment() {
         
             const rows = colorMap.trim().split('\n');
@@ -19,11 +24,6 @@ function testColumnAlignment() {
             });
         } 
     // The size of misaligned table is compared with actual table.When table is misaligned,it fails at this test case
- function testColorMapLength() {
-    const colorMapLines = colorMap.split("\n").filter(Boolean);
-    const maxSizeOfColorPair = (majorColors.length * minorColors.length);
-    expect(colorMapLines.length).equals(maxSizeOfColorPair);
-}
     // Run the tests
 testColorMapLength();
 testColumnAlignment();
