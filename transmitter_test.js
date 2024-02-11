@@ -10,7 +10,7 @@ function networkTransmitStub(celsius) {
   }
 
     //transmit temperatures
-function transmissionFailureCountTest(){
+function transmissionFailureCountTest(networkTransmitStub){
     transmitInCelcius(410.4,networkTransmitStub);
     transmitInCelcius(45.5,networkTransmitStub);
     transmitInCelcius(499,networkTransmitStub);
