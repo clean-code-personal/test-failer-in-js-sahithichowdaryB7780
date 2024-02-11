@@ -11,7 +11,6 @@ function networkTransmitStub(celsius) {
        // The intention here is to transmit the temperature over a network.
     // However, this is a stub, so we just print the message above
     // and give back a return code.
-
 }
 // Transmit temperatures
 transmitInCelcius(99.01234567901234, networkTransmitStub);
