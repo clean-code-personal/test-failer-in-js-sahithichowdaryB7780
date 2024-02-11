@@ -1,5 +1,5 @@
 let transmissionFailureCount=0;
-
+let newTransmissionFailureCount=0;
 function transmitInCelcius(fahrenheit, networkTransmit = networkTransmitStub) {
   const celsius = (fahrenheit - 32) * 5 / 9;
   const returnCode = networkTransmit(celsius);
@@ -9,7 +9,8 @@ function transmitInCelcius(fahrenheit, networkTransmit = networkTransmitStub) {
     console.log('transmissionFailureCount in transmitter.js:',transmissionFailureCount);
   }
 }
-console.log('final transmissionFailureCount in transmitter.js',transmissionFailureCount);
-
-module.exports = { transmitInCelcius, transmissionFailureCount };
+setTransmissionFailureCount(){
+  newTransmissionFailureCount=transmissionFailureCount;
+}
+module.exports = { transmitInCelcius, transmissionFailureCount,setTransmissionFailureCount, newTransmissionFailureCount};
 
