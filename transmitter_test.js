@@ -14,9 +14,13 @@ function networkTransmitStub(celsius) {
 }
 // Transmit temperatures
 transmitInCelcius(410.4, networkTransmitStub);
+console.log('newTransmissionFailureCount:',newTransmissionFailureCount);
 transmitInCelcius(45.5, networkTransmitStub);
+console.log('newTransmissionFailureCount:',newTransmissionFailureCount);
 transmitInCelcius(499, networkTransmitStub);
+console.log('newTransmissionFailureCount:',newTransmissionFailureCount);
 transmitInCelcius(500, networkTransmitStub);
+console.log('newTransmissionFailureCount:',newTransmissionFailureCount);
 
 
     // Log transmission failure count
