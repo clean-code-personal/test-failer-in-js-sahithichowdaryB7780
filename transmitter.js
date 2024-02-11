@@ -5,11 +5,9 @@ function transmitInCelcius(fahrenheit, networkTransmit = networkTransmitStub) {
   if (returnCode !== 200) {
     // Increment failure count for non-200 return codes
     transmissionFailureCount ++;
-    console.log('transmissionFailureCount in transmitter.js:',transmissionFailureCount);
   }
 }
 function setTransmissionFailureCount(){
-  console.log('transmissionFailureCount in setTransmissionFailureCount:',transmissionFailureCount);
   return transmissionFailureCount;
 }
 module.exports = { transmitInCelcius, transmissionFailureCount,setTransmissionFailureCount};
