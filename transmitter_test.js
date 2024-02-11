@@ -15,7 +15,7 @@ function transmissionFailureCountTest(){
     transmitInCelcius(45.5,networkTransmitStub);
     transmitInCelcius(499,networkTransmitStub);
 }
-
+transmissionFailureCountTest();
 
 
 // Log transmission failure count
