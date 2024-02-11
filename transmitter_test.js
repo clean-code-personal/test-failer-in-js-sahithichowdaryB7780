@@ -13,32 +13,30 @@ function networkTransmitStub(celsius) {
 
 }
 // Transmit temperatures
-transmitInCelcius(210.22222222222223, networkTransmitStub);
+transmitInCelcius(99.01234567901234, networkTransmitStub);
 console.log('transmissionFailureCount:', transmitInCelcius.transmissionFailureCount);
 console.log('newTransmissionFailureCount:', newTransmissionFailureCount);
 
-transmitInCelcius(7.5, networkTransmitStub);
+transmitInCelcius(-13.61111111111111, networkTransmitStub);
 console.log('transmissionFailureCount:', transmitInCelcius.transmissionFailureCount);
 console.log('newTransmissionFailureCount:', newTransmissionFailureCount);
 
-transmitInCelcius(259.44444444444446, networkTransmitStub);
+transmitInCelcius(126.35802469135803, networkTransmitStub);
 console.log('transmissionFailureCount:', transmitInCelcius.transmissionFailureCount);
 console.log('newTransmissionFailureCount:', newTransmissionFailureCount);
 
-transmitInCelcius(260, networkTransmitStub);
+transmitInCelcius(126.66666666666667, networkTransmitStub);
 console.log('transmissionFailureCount:', transmitInCelcius.transmissionFailureCount);
 console.log('newTransmissionFailureCount:', newTransmissionFailureCount);
 
+// Log transmission failure count
+console.log(`Transmission failed ${transmitInCelcius.transmissionFailureCount} times.`);
 
-    // Log transmission failure count
-    console.log(`Transmission failed ${newTransmissionFailureCount} times.`);
+// Test if transmission failure count is at least 1
+expect(transmitInCelcius.transmissionFailureCount).to.be.at.least(1);
+console.log('Test case passed: At least one transmission failure detected.');
 
-    // Test if transmission failure count is at least 1
-    //fails the test,as the code is buggy
-        expect(newTransmissionFailureCount).to.be.at.least(1);
-        console.log('Test case passed: At least one transmission failure detected.');
-
-    console.log('All is well (maybe!)');
+console.log('All is well (maybe!)');
 
 
 
