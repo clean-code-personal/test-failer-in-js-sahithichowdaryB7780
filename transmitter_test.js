@@ -1,8 +1,5 @@
 const { transmitInCelcius, transmissionFailureCount } = require('./transmitter');
 const { expect }=require('chai');
-function setTransmissionFailureCount(){
-    newTransmissionFailureCount=transmissionFailureCount;
-}
 function networkTransmitStub(celsius) {
     console.log(`Temperature to transmit: ${celsius} Celsius`);
     // Generate a random number between 0 and 1
