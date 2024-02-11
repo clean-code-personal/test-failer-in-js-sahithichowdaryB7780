@@ -8,6 +8,7 @@ function transmitInCelcius(fahrenheit, networkTransmit = networkTransmitStub,tra
     // Increment failure count for non-200 return codes
     transmissionFailureCount ++;
   }
+  return transmissionFailureCount 
 }
 
 module.exports = { transmitInCelcius, transmissionFailureCount };
