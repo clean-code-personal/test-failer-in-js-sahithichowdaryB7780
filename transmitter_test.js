@@ -13,12 +13,16 @@ function networkTransmitStub(celsius) {
     // and give back a return code.
 
 }
+console.log("Initial transmissionFailureCount:", transmissionFailureCount);
 
-    //transmit temperatures
-    transmitInCelcius(410.4,networkTransmitStub,transmissionFailureCount);
-    transmitInCelcius(45.5,networkTransmitStub,transmissionFailureCount);
-    transmitInCelcius(499,networkTransmitStub,transmissionFailureCount);
-    transmitInCelcius(500,networkTransmitStub,transmissionFailureCount);
+// Transmit temperatures
+transmitInCelcius(410.4, networkTransmitStub);
+transmitInCelcius(45.5, networkTransmitStub);
+transmitInCelcius(499, networkTransmitStub);
+transmitInCelcius(500, networkTransmitStub);
+
+console.log("Final transmissionFailureCount:", transmissionFailureCount);
+
 
     // Log transmission failure count
     console.log(`Transmission failed ${transmissionFailureCount} times.`);
