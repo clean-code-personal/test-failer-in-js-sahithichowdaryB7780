@@ -10,8 +10,5 @@ function transmitInCelcius(fahrenheit, networkTransmit = networkTransmitStub) {
   }
 }
 
-let newTransmissionFailureCount=transmissionFailureCount;
-
-
-module.exports = { transmitInCelcius, transmissionFailureCount, newTransmissionFailureCount };
+module.exports = { transmitInCelcius, transmissionFailureCount };
 
