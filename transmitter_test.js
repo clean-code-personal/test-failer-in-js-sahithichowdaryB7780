@@ -15,10 +15,10 @@ function networkTransmitStub(celsius) {
 }
 
     //transmit temperatures
-    transmitInCelcius(410.4,networkTransmitStub);
-    transmitInCelcius(45.5,networkTransmitStub);
-    transmitInCelcius(499,networkTransmitStub);
-    transmitInCelcius(500,networkTransmitStub);
+    transmitInCelcius(410.4,networkTransmitStub,transmissionFailureCount);
+    transmitInCelcius(45.5,networkTransmitStub,transmissionFailureCount);
+    transmitInCelcius(499,networkTransmitStub,transmissionFailureCount);
+    transmitInCelcius(500,networkTransmitStub,transmissionFailureCount);
 
     // Log transmission failure count
     console.log(`Transmission failed ${transmissionFailureCount} times.`);
