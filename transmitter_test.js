@@ -8,7 +8,6 @@ function networkTransmitStub(celsius) {
     // If randomNumber is less than 0.5, return 200, otherwise return 500
     return randomNumber < 0.5 ? 200 : 500;
   }
-
     //transmit temperatures
 function transmissionFailureCountTest(networkTransmitStub){
     transmitInCelcius(410.4,networkTransmitStub);
