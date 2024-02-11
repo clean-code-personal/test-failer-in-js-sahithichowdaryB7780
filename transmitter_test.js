@@ -1,4 +1,4 @@
-const { transmitInCelcius,transmissionFailureCount , newTransmissionFailureCount } = require('./transmitter');
+const { transmitInCelcius,transmissionFailureCount } = require('./transmitter');
 const { expect }=require('chai');
 function networkTransmitStub(celsius) {
     console.log(`Temperature to transmit: ${celsius} Celsius`);
@@ -14,26 +14,25 @@ function networkTransmitStub(celsius) {
 }
 // Transmit temperatures
 transmitInCelcius(99.01234567901234, networkTransmitStub);
-console.log('transmissionFailureCount:', transmitInCelcius.transmissionFailureCount);
-console.log('newTransmissionFailureCount:', newTransmissionFailureCount);
+console.log('transmissionFailureCount:',transmissionFailureCount);
+
 
 transmitInCelcius(-13.61111111111111, networkTransmitStub);
-console.log('transmissionFailureCount:', transmitInCelcius.transmissionFailureCount);
-console.log('newTransmissionFailureCount:', newTransmissionFailureCount);
+console.log('transmissionFailureCount:', transmissionFailureCount);
+
 
 transmitInCelcius(126.35802469135803, networkTransmitStub);
-console.log('transmissionFailureCount:', transmitInCelcius.transmissionFailureCount);
-console.log('newTransmissionFailureCount:', newTransmissionFailureCount);
+console.log('transmissionFailureCount:',.transmissionFailureCount);
+
 
 transmitInCelcius(126.66666666666667, networkTransmitStub);
-console.log('transmissionFailureCount:', transmitInCelcius.transmissionFailureCount);
-console.log('newTransmissionFailureCount:', newTransmissionFailureCount);
+console.log('transmissionFailureCount:',transmissionFailureCount);
 
 // Log transmission failure count
-console.log(`Transmission failed ${transmitInCelcius.transmissionFailureCount} times.`);
+console.log(`Transmission failed ${transmissionFailureCount} times.`);
 
 // Test if transmission failure count is at least 1
-expect(transmitInCelcius.transmissionFailureCount).to.be.at.least(1);
+expect(transmissionFailureCount).to.be.at.least(1);
 console.log('Test case passed: At least one transmission failure detected.');
 
 console.log('All is well (maybe!)');
