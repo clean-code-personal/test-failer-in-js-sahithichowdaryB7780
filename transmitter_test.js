@@ -1,4 +1,4 @@
-const { transmitInCelcius,transmissionFailureCount } = require('./transmitter');
+const { transmitInCelcius,transmissionFailureCount,setTransmissionFailureCount, newTransmissionFailureCount } = require('./transmitter');
 const { expect }=require('chai');
 function networkTransmitStub(celsius) {
     console.log(`Temperature to transmit: ${celsius} Celsius`);
@@ -28,11 +28,13 @@ console.log('transmissionFailureCount:',transmissionFailureCount);
 transmitInCelcius(126.66666666666667, networkTransmitStub);
 console.log('transmissionFailureCount:',transmissionFailureCount);
 
+setTransmissionFailureCount();
+
 // Log transmission failure count
-console.log(`Transmission failed ${transmissionFailureCount} times.`);
+console.log(`Transmission failed ${newTransmissionFailureCount} times.`);
 
 // Test if transmission failure count is at least 1
-expect(transmissionFailureCount).to.be.at.least(1);
+expect(newTransmissionFailureCount).to.be.at.least(1);
 console.log('Test case passed: At least one transmission failure detected.');
 
 console.log('All is well (maybe!)');
