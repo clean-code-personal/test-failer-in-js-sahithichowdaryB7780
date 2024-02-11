@@ -1,4 +1,4 @@
-let transmissionFailureCount = 0;
+
 
 function transmitInCelcius(fahrenheit, networkTransmit = networkTransmitStub,transmissionFailureCount) {
   const celsius = (fahrenheit - 32) * 5 / 9;
