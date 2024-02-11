@@ -19,8 +19,8 @@ jobs:
       - name: tshirts fail
         run: "node tshirts_test.js"
 
-      - name: misaligned fail
-        run: "node misaligned_test.js"
-
       - name: transmitter fail
         run: "node transmitter_test.js"
+
+      - name: misaligned fail
+        run: "node misaligned_test.js"
