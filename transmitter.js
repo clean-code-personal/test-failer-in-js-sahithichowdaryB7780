@@ -6,6 +6,7 @@ function transmitInCelcius(fahrenheit) {
         // non-ok response indicates failure while transmitting over the network
         // record of failure count
         transmissionFailureCount += 1;
+        console.log('transmissionFailureCount in trans:',transmissionFailureCount);
     }
 }
 
