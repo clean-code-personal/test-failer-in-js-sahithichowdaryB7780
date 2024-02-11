@@ -13,5 +13,5 @@ function transmitInCelcius(fahrenheit, networkTransmit = networkTransmitStub) {
 let newTransmissionFailureCount=transmissionFailureCount;
 
 
-odule.exports = { transmitInCelcius, transmissionFailureCount, newTransmissionFailureCount };
+module.exports = { transmitInCelcius, transmissionFailureCount, newTransmissionFailureCount };
 
