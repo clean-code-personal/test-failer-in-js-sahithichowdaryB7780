@@ -1,4 +1,4 @@
-const { transmitInCelcius, newTransmissionFailureCount } = require('./transmitter');
+const { transmitInCelcius,transmissionFailureCount , newTransmissionFailureCount } = require('./transmitter');
 const { expect }=require('chai');
 function networkTransmitStub(celsius) {
     console.log(`Temperature to transmit: ${celsius} Celsius`);
