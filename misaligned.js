@@ -3,13 +3,19 @@ const minorColors = ["Blue", "Orange", "Green", "Brown", "Slate"];
 
 function print_color_map() {
     let color_map = "";
+    const maxIndex = majorColors.length * minorColors.length;
+    const maxIndexWidth = String(maxIndex).length;
+
     for (let i = 0; i < majorColors.length; i++) {
         for (let j = 0; j < minorColors.length; j++) {
-            const index = i * 5 + j + 1; // Adjust index to start from 1
-            const paddedIndex = String(index).padEnd(2); // Padding index to ensure consistent width
-            color_map += `${paddedIndex} | ${majorColors[i].padEnd(6)} | ${minorColors[j]}\n`; // Padding major colors for consistent width
+            const index = i * minorColors.length + j + 1;
+            const paddedIndex = String(index).padStart(maxIndexWidth); // Padding index to ensure consistent width
+            const paddedMajorColor = majorColors[i].padEnd(6); // Padding major colors for consistent width
+            const paddedMinorColor = minorColors[j].padEnd(7); // Padding minor colors for consistent width
+            color_map += `${paddedIndex} | ${paddedMajorColor} | ${paddedMinorColor}\n`;
         }
     }
+
     return { color_map, majorColors, minorColors }; // Returning color map ,majorColors and minorColors
 }
 
