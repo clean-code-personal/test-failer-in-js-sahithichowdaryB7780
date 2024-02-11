@@ -1,8 +1,8 @@
 let transmissionFailureCount = 0;
 let b=0;
-function transmitInCelcius(fahrenheit,networkTransmitStub) {
+function transmitInCelcius(fahrenheit,networkTransmit = networkTransmitStub) {
     const celsius = (fahrenheit - 32) * 5 / 9;
-    const returnCode = networkTransmitStub(celsius);
+    const returnCode = networkTransmit(celsius);
     if (returnCode !== 200) {
         // non-ok response indicates failure while transmitting over the network
         // record of failure count
