@@ -22,7 +22,7 @@ console.log('transmissionFailureCount:', transmissionFailureCount);
 
 
 transmitInCelcius(126.35802469135803, networkTransmitStub);
-console.log('transmissionFailureCount:',.transmissionFailureCount);
+console.log('transmissionFailureCount:',transmissionFailureCount);
 
 
 transmitInCelcius(126.66666666666667, networkTransmitStub);
