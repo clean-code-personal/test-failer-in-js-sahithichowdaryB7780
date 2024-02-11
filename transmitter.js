@@ -9,7 +9,8 @@ function transmitInCelcius(fahrenheit, networkTransmit = networkTransmitStub) {
   }
 }
 function setTransmissionFailureCount(){
+  console.log('transmissionFailureCount in setTransmissionFailureCount:',transmissionFailureCount);
   return transmissionFailureCount;
 }
-module.exports = { transmitInCelcius, transmissionFailureCount,setTransmissionFailureCount, newTransmissionFailureCount};
+module.exports = { transmitInCelcius, transmissionFailureCount,setTransmissionFailureCount};
 
