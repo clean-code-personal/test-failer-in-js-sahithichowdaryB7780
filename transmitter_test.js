@@ -1,38 +1,17 @@
-const { transmitInCelcius, incrementTransmissionFailureCount, transmissionFailureCount } = require('./transmitter');
+const { transmitInCelcius, transmissionFailureCount } = require('./transmitter');
 const { expect } = require('chai');
 
-function networkTransmitStub(celsius) {
-    console.log(`Temperature to transmit: ${celsius} Celsius`);
-    // Generate a random number between 0 and 1
-    const randomNumber = Math.round(Math.random());
-    // Map the random number to either 200 or 500
-    // If randomNumber is less than 0.5, return 200, otherwise return 500
-    return randomNumber == 0 ? 200 : 500;
-}
-
 // Modify transmitInCelcius to use shared state
-transmitInCelcius.bind({ incrementTransmissionFailureCount })(
-  99.01234567901234,
-  networkTransmitStub
-);
+transmitInCelcius(99.01234567901234);
 console.log('transmissionFailureCount:', transmissionFailureCount);
 
-transmitInCelcius.bind({ incrementTransmissionFailureCount })(
-  -13.61111111111111,
-  networkTransmitStub
-);
+transmitInCelcius(-13.61111111111111);
 console.log('transmissionFailureCount:', transmissionFailureCount);
 
-transmitInCelcius.bind({ incrementTransmissionFailureCount })(
-  126.35802469135803,
-  networkTransmitStub
-);
+transmitInCelcius(126.35802469135803);
 console.log('transmissionFailureCount:', transmissionFailureCount);
 
-transmitInCelcius.bind({ incrementTransmissionFailureCount })(
-  126.66666666666667,
-  networkTransmitStub
-);
+transmitInCelcius(126.66666666666667);
 console.log('transmissionFailureCount:', transmissionFailureCount);
 
 // Log transmission failure count
@@ -43,11 +22,3 @@ expect(transmissionFailureCount).to.be.at.least(1);
 console.log('Test case passed: At least one transmission failure detected.');
 
 console.log('All is well (maybe!)');
-
-
-
-
-
-
-
-
