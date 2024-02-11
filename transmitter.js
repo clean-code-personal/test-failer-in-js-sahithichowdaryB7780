@@ -1,6 +1,6 @@
 let transmissionFailureCount = 0;
 let b=0;
-function transmitInCelcius(fahrenheit) {
+function transmitInCelcius(fahrenheit,networkTransmitStub) {
     const celsius = (fahrenheit - 32) * 5 / 9;
     const returnCode = networkTransmitStub(celsius);
     if (returnCode !== 200) {
