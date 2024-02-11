@@ -3,7 +3,8 @@ const { expect }=require('chai');
 function networkTransmitStub(celsius) {
     console.log(`Temperature to transmit: ${celsius} Celsius`);
     // Generate a random number between 0 and 1
-    const randomNumber = Math.random();
+    const randomNumber = Math.round(Math.random());
+    console.log("randomNumber);
     // Map the random number to either 200 or 500
     // If randomNumber is less than 0.5, return 200, otherwise return 500
     return randomNumber < 0.1 ? 200 : 500;
