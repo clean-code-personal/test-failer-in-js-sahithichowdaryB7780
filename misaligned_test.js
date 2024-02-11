@@ -7,21 +7,21 @@ const minorColors = returned_contents_print_color_map.minorColors;
 console.log(colorMap);
  //The misalignment is identified by the column width occupied,when output is not aligned it has different column width at each row
 function testColumnAlignment() {
-    const colorMap = print_color_map().color_map; // Accessing the color_map property
-    const rows = colorMap.trim().split('\n');
-    const columns = rows.map(row => row.split('|').map(cell => cell.trim()));
 
-    columns.forEach(column => {
-        let columnWidth;
-        if (column[0] === "1") {
-            columnWidth = column[0].length; // Length of index, no padding for index of 1
-        } else {
-            columnWidth = column[0].length + 1; // Length of index with padding
-        }
-        columnWidth = Math.max(columnWidth, ...column.slice(1).map(cell => cell.length)); // Maximum width of the column
-        expect(column.every(cell => cell.length === columnWidth)).to.be.true;
-    });
-}
+            //an array is formed with each row as an element in array
+            const rows = colorMap.trim().split('\n');
+            //multi-array is formed with each cell acts as elements inside inner array
+            const columns = rows.map(row => row.split('|').map(cell => cell.trim()));
+
+            // Check alignment of each column
+            columns.forEach(column => {
+                 //We calculate the maximum cell length
+                const columnWidth = Math.max(...column.map(cell => cell.length));
+                //This fails
+                //This fails as we compare all cell lengths are equal or not
+                expect(column.every(cell => cell.length === columnWidth)).to.be.true;
+            });
+        } 
 
 
 //The misalignment is identified by the column width occupied,when output is not aligned it has different column width at each row
