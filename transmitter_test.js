@@ -14,20 +14,9 @@ function networkTransmitStub(celsius) {
 }
 // Transmit temperatures
 transmitInCelcius(99.01234567901234, networkTransmitStub);
-console.log('transmissionFailureCount:',transmissionFailureCount);
-
-
 transmitInCelcius(-13.61111111111111, networkTransmitStub);
-console.log('transmissionFailureCount:', transmissionFailureCount);
-
-
 transmitInCelcius(126.35802469135803, networkTransmitStub);
-console.log('transmissionFailureCount:',transmissionFailureCount);
-
-
 transmitInCelcius(126.66666666666667, networkTransmitStub);
-console.log('transmissionFailureCount:',transmissionFailureCount);
-
 newTransmissionFailureCount= setTransmissionFailureCount();
 
 // Log transmission failure count
