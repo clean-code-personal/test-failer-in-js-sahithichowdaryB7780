@@ -17,15 +17,13 @@ function testColumnAlignment() {
         const majorColorLength = cellLengths[1];
         const minorColorLength = cellLengths[2];
 
-        if (pairNumberLength !== 2 || majorColorLength !== 6 || minorColorLength !== 6) {
-            console.log(`Misalignment detected in column ${columnIndex + 1}:`);
 
             // Fail the test if misalignment is detected
             expect(pairNumberLength).to.be.oneOf([1, 2]);
 
             expect(majorColorLength).to.equal(6);
             expect(minorColorLength).to.be.oneOf([5,6]);
-        }
+        
     });
 }
 
