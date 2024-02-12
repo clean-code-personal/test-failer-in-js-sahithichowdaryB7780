@@ -12,13 +12,14 @@ function testColumnAlignment() {
     // Check alignment of each column
     columns.forEach((column, columnIndex) => {
         const cellLengths = column.map(cell => cell.length);
-
+        //In cellLengths array index 0 contains index length
+        //In cellLengths array index 1 contains majorColor
+         //In cellLengths array index 2 contains minorColor
         const pairNumberLength = cellLengths[0];
         const majorColorLength = cellLengths[1];
         const minorColorLength = cellLengths[2];
 
 
-            // Fail the test if misalignment is detected
             expect(pairNumberLength).to.be.oneOf([1, 2]);
 
             expect(majorColorLength).to.equal(6);
