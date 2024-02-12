@@ -7,6 +7,7 @@ function transmitInCelcius(fahrenheit, networkTransmit = networkTransmitStub) {
     transmissionFailureCount ++;
   }
 }
+//on having this function we are able to reflect the changes on transmissionFailureCount in both the files, or else the transmissionFailureCount remains 0 on increment
 function setTransmissionFailureCount(){
   return transmissionFailureCount;
 }
