@@ -7,7 +7,6 @@ const minorColors = returned_contents_print_color_map.minorColors;
 console.log(colorMap);
  //The misalignment is identified by the column width occupied,when output is not aligned it has different column width at each row
 function testColumnAlignment() {
-
             //an array is formed with each row as an element in array
             const rows = colorMap.trim().split('\n');
             //multi-array is formed with each cell acts as elements inside inner array
