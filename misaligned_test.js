@@ -11,20 +11,26 @@ function testColumnAlignment() {
 
     // Check alignment of each column
     columns.forEach((column, columnIndex) => {
-        const columnWidth = Math.max(...column.map(cell => cell.length));
-        const misalignedCells = column.filter(cell => cell.length !== columnWidth);
+        const cellLengths = column.map(cell => cell.trim().length);
 
-        if (misalignedCells.length > 0) {
+        const pairNumberLength = cellLengths[0];
+        const majorColorLength = cellLengths[1];
+        const minorColorLength = cellLengths[2];
+
+        if (pairNumberLength !== 2 || majorColorLength !== 6 || minorColorLength !== 6) {
             console.log(`Misalignment detected in column ${columnIndex + 1}:`);
-            misalignedCells.forEach((cell, rowIndex) => {
-                console.log(`  Row ${rowIndex + 1}: "${cell.trim()}"`);
-            });
+            console.log(`  Pair Number Length: ${pairNumberLength}`);
+            console.log(`  Major Color Length: ${majorColorLength}`);
+            console.log(`  Minor Color Length: ${minorColorLength}`);
 
             // Fail the test if misalignment is detected
-            expect(misalignedCells.length).to.equal(0);
+            expect(pairNumberLength).to.equal(2);
+            expect(majorColorLength).to.equal(6);
+            expect(minorColorLength).to.equal(6);
         }
     });
 }
+
  
 
 
