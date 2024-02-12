@@ -21,7 +21,7 @@ function print_color_map() {
     }
 
     console.log(color_map);
-}
+
 
     return { color_map, majorColors, minorColors }; // Returning color map ,majorColors and minorColors
 }
