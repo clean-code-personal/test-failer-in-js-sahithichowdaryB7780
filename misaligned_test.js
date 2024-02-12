@@ -11,7 +11,7 @@ function testColumnAlignment() {
             //an array is formed with each row as an element in array
             const rows = colorMap.trim().split('\n');
             //multi-array is formed with each cell acts as elements inside inner array
-            const columns = rows.map(row => row.split('|').map(cell => cell.trim()));
+            const columns = rows.map(row => row.split('|'));
 
             // Check alignment of each column
             columns.forEach(column => {
