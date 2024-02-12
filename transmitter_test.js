@@ -17,6 +17,7 @@ transmitInCelcius(99.01234567901234, networkTransmitStub);
 transmitInCelcius(-13.61111111111111, networkTransmitStub);
 transmitInCelcius(126.35802469135803, networkTransmitStub);
 transmitInCelcius(126.66666666666667, networkTransmitStub);
+//newtransmissionFailureCount variable contains the final transmissionFailureCount value.
 newTransmissionFailureCount= setTransmissionFailureCount();
 // Log transmission failure count
 console.log(`Transmission failed ${newTransmissionFailureCount} times.`);
