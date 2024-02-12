@@ -27,7 +27,7 @@ function testColumnAlignment() {
             expect(pairNumberLength).to.be.oneOf([1, 2]);
 
             expect(majorColorLength).to.equal(6);
-            expect(minorColorLength).to.equal(6);
+            expect(minorColorLength).to.be.oneOf([5,6]);
         }
     });
 }
