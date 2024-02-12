@@ -14,13 +14,14 @@ function print_color_map() {
             const paddedIndex = String(index).padStart(maxIndexWidth); // Padding index to ensure consistent width
             const paddedMajorColor = String(majorColors[i]).padEnd(maxMajorColorsWidth); // Padding major colors for consistent width
             const paddedMinorColor = String(minorColors[j]).padEnd(maxMinorColorsWidth); // Padding minor colors for consistent width
-            color_map += `${paddedIndex.padEnd(maxIndexWidth)} | ${paddedMajorColor.padEnd(maxMajorColorsWidth)} | ${paddedMinorColor.padEnd(maxMinorColorsWidth)}\n`;
+
+            // Adjust the padding to ensure each cell in each column has the same width
+            color_map += `${paddedIndex}|${paddedMajorColor}|${paddedMinorColor}\n`;
         }
     }
 
     console.log(color_map);
-
-
+}
 
     return { color_map, majorColors, minorColors }; // Returning color map ,majorColors and minorColors
 }
