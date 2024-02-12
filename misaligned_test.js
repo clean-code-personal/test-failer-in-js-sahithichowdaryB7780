@@ -19,9 +19,6 @@ function testColumnAlignment() {
 
         if (pairNumberLength !== 2 || majorColorLength !== 6 || minorColorLength !== 6) {
             console.log(`Misalignment detected in column ${columnIndex + 1}:`);
-            console.log(`  Pair Number Length: ${pairNumberLength}`);
-            console.log(`  Major Color Length: ${majorColorLength}`);
-            console.log(`  Minor Color Length: ${minorColorLength}`);
 
             // Fail the test if misalignment is detected
             expect(pairNumberLength).to.be.oneOf([1, 2]);
@@ -47,5 +44,6 @@ function testColumnAlignment() {
     // Run the tests
 testColorMapLength();
 testColumnAlignment();
+console.log("All is well (maybe)!!");
 
 
