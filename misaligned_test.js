@@ -6,7 +6,7 @@ const majorColors = returned_contents_print_color_map.majorColors ;
 const minorColors = returned_contents_print_color_map.minorColors; 
  //The misalignment is identified by the column width occupied,when output is not aligned it has different column width at each row
 function testColumnAlignment() {
-    const rows = colorMap.trim().split('\n');
+    const rows = colorMap.split('\n');
     const columns = rows.map(row => row.split('|'));
 
     // Check alignment of each column
