@@ -27,8 +27,6 @@ function testColumnAlignment() {
     //colorMap split at \n character and we filter to delete empty rows
     const colorMapLines = colorMap.split("\n").filter(Boolean);
     const maxSizeOfColorPair = (majorColors.length * minorColors.length);
-    console.log(colorMapLines.length);
-    console.log(maxSizeOfColorPair);
     expect(colorMapLines.length).equals(maxSizeOfColorPair);
 }
    
