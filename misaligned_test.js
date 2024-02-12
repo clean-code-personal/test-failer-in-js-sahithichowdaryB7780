@@ -11,7 +11,7 @@ function testColumnAlignment() {
 
     // Check alignment of each column
     columns.forEach((column, columnIndex) => {
-        const cellLengths = column.map(cell => cell.trim().length);
+        const cellLengths = column.map(cell => cell.length);
 
         const pairNumberLength = cellLengths[0];
         const majorColorLength = cellLengths[1];
