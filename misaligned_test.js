@@ -18,6 +18,7 @@ function testColumnAlignment() {
                 //This fails
                 //This fails as we compare all cell lengths are equal or not
                 expect(column.every(cell => cell.length === columnWidth)).to.be.true;
+             console.log(column.every(cell => cell.length === columnWidth));
             });
         } 
 
