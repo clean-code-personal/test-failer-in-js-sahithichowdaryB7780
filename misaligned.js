@@ -1,9 +1,6 @@
 const majorColors = ["White", "Red", "Black", "Yellow", "Violet"];
 const minorColors = ["Blue", "Orange", "Green", "Brown", "Slate"];
 
-const majorColors = ["White", "Red", "Black", "Yellow", "Violet"];
-const minorColors = ["Blue", "Orange", "Green", "Brown", "Slate"];
-
 function print_color_map() {
   let color_map = "";
   const maxIndexWidth = String(majorColors.length * minorColors.length).length;
